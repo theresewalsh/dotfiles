@@ -91,6 +91,8 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gm='git merge --no-ff'
 
+export GIT_ASKPASS=/usr/local/bin/keyring-get-pass
+
 # This tells you the active git branch you're in
 function parse_git_branch {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -100,6 +102,5 @@ function rvm_version {
   local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
   [ "$gemset" != "" ] && echo "@$gemset"
 }
-
 # And this puts it at the end of your prompt.
 export PS1="\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] "
