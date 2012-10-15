@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin
 # Shortcut to touch tmp/restart.txt for restarting passenger apps. Complain if wrong directory.
 function ttr {
   if [ -x tmp ]; then
@@ -103,6 +103,5 @@ function rvm_version {
   [ "$gemset" != "" ] && echo "@$gemset"
 }
 
-export PATH=$PATH:~/.rvm/gems/ruby-1.8.7-p371/bin
 # And this puts it at the end of your prompt.
-export PS1="\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] "
+export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] '
