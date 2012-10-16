@@ -82,7 +82,7 @@ alias bu='bundle update'
 
 # Git aliases
 alias gst='git status'
-alias gl='git log --oneline --decorate --color'
+alias gl='git log --oneline --decorate --color --graph'
 alias gp='git push'
 alias gd='git diff | gedit'
 alias gc='git commit -v'
