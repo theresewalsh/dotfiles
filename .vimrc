@@ -3,11 +3,16 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set pastetoggle=<F2>
-noremap <F6> :bnext!
-noremap <F5> :bprev!
-inoremap <F6> :bnext!
-inoremap <F5> :bprev!
-noremap <F8> :tabnext
-noremap <F7> :tabprev!
-inoremap <F8> :tabnext!
-inoremap <F7> :tabprev!
+noremap <F6> :bnext!<CR>
+noremap <F5> :bprev!<CR>
+inoremap <F6> :bnext!<CR>
+inoremap <F5> :bprev!<CR>
+noremap <F8> :tabnext<CR>
+noremap <F7> :tabprev!<CR>
+inoremap <F8> :tabnext!<CR>
+inoremap <F7> :tabprev!<CR>
+
+syntax on
+filetype on
+au BufNewFile,BufRead *.dump set filetype=sql
+au BufNewFile,BufRead Gemfile,Gemfile.lock,config.ru set filetype=ruby
