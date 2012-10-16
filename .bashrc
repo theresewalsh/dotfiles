@@ -99,8 +99,8 @@ function parse_git_branch {
 }
 
 function rvm_version {
-  local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
-  [ "$gemset" != "" ] && echo "@$gemset"
+  local gemset=$(echo $GEM_HOME | awk -F'ruby-' '{print $2}')
+  [ "$gemset" != "" ] && echo "$gemset"
 }
 
 # And this puts it at the end of your prompt.
