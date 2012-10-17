@@ -12,6 +12,7 @@ noremap <F7> :tabprev!<CR>
 inoremap <F8> :tabnext!<CR>
 inoremap <F7> :tabprev!<CR>
 
+call pathogen#infect()
 syntax on
 filetype on
 au BufNewFile,BufRead *.dump set filetype=sql
