@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin
+export PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin:/usr/pgsql-9.0/bin
 # Shortcut to touch tmp/restart.txt for restarting passenger apps. Complain if wrong directory.
 function ttr {
   if [ -x tmp ]; then
