@@ -8,6 +8,15 @@ function ttr {
   fi
 }
 
+function vim() {
+  IFS=':' read -ra PARAMS <<< "$1"
+  if [ -z "${PARAMS[1]}" ]; then
+    /usr/bin/vim "$@"
+  else
+    /usr/bin/vim ${PARAMS[0]} -c ${PARAMS[1]}
+  fi
+}
+
 function sc {
   if [ -e Gemfile ]; then
     export bundle_cmd_prefix="bundle exec"
@@ -69,7 +78,7 @@ alias lks='ls'
 # Everyone needs X, servers are meant to run gui apps, right?
 alias ssh='ssh -X'
 
-alias vi='/usr/bin/vim'
+alias vi='vim'
 
 # grep-fu gem aliases - for searching ruby projects - gem install grep-fu first
 alias g='grep-fu'
