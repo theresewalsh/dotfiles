@@ -18,3 +18,8 @@ filetype on
 au BufNewFile,BufRead,BufWrite *.dump set filetype=sql
 au BufNewFile,BufRead,BufWrite Gemfile,Gemfile.lock,config.ru,*.rabl set filetype=ruby
 autocmd FileType sh,spec,c,cpp,python,ruby,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+map <leader>h              :wincmd h<cr>
+map <leader>j              :wincmd j<cr>
+map <leader>k              :wincmd k<cr>
+map <leader>l              :wincmd l<cr>
