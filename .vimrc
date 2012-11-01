@@ -15,5 +15,6 @@ inoremap <F7> :tabprev!<CR>
 call pathogen#infect()
 syntax on
 filetype on
-au BufNewFile,BufRead *.dump set filetype=sql
-au BufNewFile,BufRead Gemfile,Gemfile.lock,config.ru set filetype=ruby
+au BufNewFile,BufRead,BufWrite *.dump set filetype=sql
+au BufNewFile,BufRead,BufWrite Gemfile,Gemfile.lock,config.ru,*.rabl set filetype=ruby
+autocmd FileType sh,spec,c,cpp,python,ruby,java autocmd BufWritePre <buffer> :%s/\s\+$//e
