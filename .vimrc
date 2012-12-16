@@ -1,4 +1,4 @@
-set autoindent
+set smartindent
 set expandtab
 set softtabstop=2
 set shiftwidth=2
@@ -17,7 +17,9 @@ syntax on
 filetype on
 au BufNewFile,BufRead,BufWrite *.dump set filetype=sql
 au BufNewFile,BufRead,BufWrite Gemfile,Gemfile.lock,config.ru,*.rabl set filetype=ruby
-autocmd FileType sh,spec,c,cpp,python,ruby,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+au BufNewFile,BufRead,BufWrite *.yml set filetype=yaml
+au BufNewFile,BufRead,BufWrite *.json set filetype=javascript
+autocmd FileType sh,spec,c,cpp,python,ruby,java,yaml,javascript,html,css autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 map <leader>h              :wincmd h<cr>
 map <leader>j              :wincmd j<cr>
