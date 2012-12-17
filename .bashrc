@@ -91,7 +91,9 @@ alias bu='bundle update'
 
 # Git aliases
 alias gst='git status'
-alias gl='git log --oneline --decorate --color --graph'
+#alias gl='git log --oneline --decorate --color --graph'
+# This adds author info to the above:
+alias gl='git log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %an%C(green): %s %C(white) (%ar%Creset)"'
 alias gp='git push'
 alias gd='git diff | gedit'
 alias gc='git commit -v'
