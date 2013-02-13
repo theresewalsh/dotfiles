@@ -47,9 +47,9 @@ function ss {
   else
     sinatra_rb=`egrep -l "^require.+sinatra.$" *.rb 2>/dev/null`
     if [ -e "$sinatra_rb" ]; then
-      $bundle_cmd_prefix shotgun $sinatra_rb
+      $bundle_cmd_prefix shotgun $sinatra_rb $*
     else
-      $bundle_cmd_prefix rails s
+      $bundle_cmd_prefix rails s $*
     fi
   fi
 }
@@ -116,3 +116,4 @@ function rvm_version {
 
 # And this puts it at the end of your prompt.
 export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] '
+export EDITOR='vim'
