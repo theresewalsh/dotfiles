@@ -80,10 +80,6 @@ alias ssh='ssh -X'
 
 alias vi='vim'
 
-# grep-fu gem aliases - for searching ruby projects - gem install grep-fu first
-alias g='grep-fu'
-alias ga='grep-fu a'
-
 # Bundler aliases
 alias be='bundle exec'
 alias ber='bundle exec rake'
