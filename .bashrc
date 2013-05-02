@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin:/usr/pgsql-9.0/bin
+export PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin:/usr/pgsql-9.0/bin:/usr/local/scala/current/bin
 # Shortcut to touch tmp/restart.txt for restarting passenger apps. Complain if wrong directory.
 function ttr {
   if [ -x tmp ]; then
@@ -8,12 +8,14 @@ function ttr {
   fi
 }
 
+VIM=`which vim`
+
 function vim() {
   IFS=':' read -ra PARAMS <<< "$1"
   if [ -z "${PARAMS[1]}" ]; then
-    /usr/bin/vim "$@"
+    $VIM "$@"
   else
-    /usr/bin/vim ${PARAMS[0]} -c ${PARAMS[1]}
+    $VIM ${PARAMS[0]} -c ${PARAMS[1]}
   fi
 }
 
@@ -98,6 +100,8 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gm='git merge --no-ff'
 
+alias gbox='gem inabox `rvm gemdir`/cache/*.gem'
+
 export GIT_ASKPASS=/usr/local/bin/keyring-get-pass
 
 # This tells you the active git branch you're in
@@ -112,4 +116,4 @@ function rvm_version {
 
 # And this puts it at the end of your prompt.
 export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] '
-export EDITOR='vim'
+export EDITOR=$VIM
