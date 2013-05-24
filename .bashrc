@@ -117,3 +117,9 @@ function rvm_version {
 # And this puts it at the end of your prompt.
 export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] '
 export EDITOR=$VIM
+
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
+export RUBY_HEAP_MIN_SLOTS=800000
+export RUBY_FREE_MIN=600000
+export LD_PRELOAD=/usr/lib64/libtcmalloc_minimal.so.4
