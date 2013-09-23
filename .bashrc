@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin:/usr/pgsql-9.0/bin:/usr/local/scala/current/bin
+export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.8.7-p371/bin:/usr/pgsql-9.0/bin:/usr/local/scala/current/bin
 # Shortcut to touch tmp/restart.txt for restarting passenger apps. Complain if wrong directory.
 function ttr {
   if [ -x tmp ]; then
@@ -100,8 +100,6 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gm='git merge --no-ff'
 
-alias gbox='gem inabox `rvm gemdir`/cache/*.gem'
-
 export GIT_ASKPASS=/usr/local/bin/keyring-get-pass
 
 # This tells you the active git branch you're in
@@ -123,3 +121,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
 export RUBY_HEAP_MIN_SLOTS=800000
 export RUBY_FREE_MIN=600000
 #export LD_PRELOAD=/usr/lib64/libtcmalloc_minimal.so.4
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
