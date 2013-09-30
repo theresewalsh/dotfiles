@@ -3,3 +3,5 @@
 	email = cameron.walsh@gmail.com
 [alias]
         l = "log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %an%C(green): %s %C(white) (%ar%Creset)\""
+[push]
+        default = upstream
